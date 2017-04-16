@@ -46,24 +46,22 @@ user_data <- merge(user_data, prefecture_data, all.x = TRUE)
 user_data <- merge(user_data, user_purchase_history, all.x = TRUE)
 user_data$COUPONS_PURCHASED <- round(nchar(user_data$PURCHASE_HISTORY_COUPON_ID_hash) / 33)
 
-write.csv(user_data , file = "user_list_concat.csv")
-
 # Print a summary
-#print(head(user_data))
+print(head(user_data))
 str(user_data)
 
-coupon_classes <- c('character', 'character', 'integer', 'integer', 'integer',
-                     'POSIXct', 'POSIXct', 'integer', 'POSIXct', 'POSIXct',
-                     'integer', 'integer', 'integer', 'integer', 'integer',
-                     'integer', 'integer', 'integer', 'integer', 'character',
-                     'character', 'character', 'character')
- 
- # Load coupon data
-#coupon_train_data <- read.csv('input/coupon_list_train.csv',
+# coupon_classes <- c('character', 'character', 'integer', 'integer', 'integer',
+#                     'POSIXct', 'POSIXct', 'integer', 'POSIXct', 'POSIXct',
+#                     'integer', 'integer', 'integer', 'integer', 'integer',
+#                     'integer', 'integer', 'integer', 'integer', 'character',
+#                     'character', 'character', 'character')
+# 
+# # Load coupon data
+# coupon_train_data <- read.csv('input/coupon_list_train.csv',
 #                               colClasses = coupon_classes)
- 
-#coupon_train_data[, 12:20] <- sapply(coupon_train_data[, 12:20], as.logical)
- 
- # Print a summary
-#print(head(coupon_train_data))
-#str(coupon_train_data)
+# 
+# coupon_train_data[, 12:20] <- sapply(coupon_train_data[, 12:20], as.logical)
+# 
+# # Print a summary
+# print(head(coupon_train_data))
+# str(coupon_train_data)
